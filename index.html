@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fake News Detection</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+<h1>Fake News Detection System</h1>
+
+<form action="/predict" method="post">
+<textarea name="news" placeholder="Paste news here..."></textarea>
+<br>
+<button type="submit">Predict</button>
+</form>
+
+<h2>{{ prediction }}</h2>
+<h3>Confidence: {{ confidence }}%</h3>
+
+</div>
+
+</body>
+</html>
