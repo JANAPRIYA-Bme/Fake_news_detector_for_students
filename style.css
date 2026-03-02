@@ -1,0 +1,228 @@
+/* ---------- GLOBAL ---------- */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #0f172a;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* ---------- HEADER ---------- */
+
+h1 {
+    position: absolute;
+    left: 40px;
+    top: 25px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+h2 {
+    margin-top: 120px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+/* ---------- TEXTAREA ---------- */
+
+textarea {
+    width: 60%;
+    height: 160px;
+    border-radius: 15px;
+    border: none;
+    padding: 20px;
+    font-size: 16px;
+    margin-top: 40px;
+    background: #e5e7eb;
+    color: #111827;
+    resize: none;
+}
+
+/* ---------- PREDICT BUTTON ONLY ---------- */
+
+form button {
+    margin-top: 30px;
+    padding: 14px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(to right, #3b82f6, #6366f1);
+    color: white;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- RESULT SECTION ---------- */
+
+.result {
+    margin-top: 60px;
+}
+
+.result h3 {
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+/* ---------- RESULT COLORS ---------- */
+
+.real {
+    color: #22c55e;
+}
+
+.fake {
+    color: #ef4444;
+}
+
+/* ---------- PROGRESS BAR ---------- */
+
+.progress {
+    width: 40%;
+    height: 20px;
+    background: #d1d5db;
+    border-radius: 20px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, #3b82f6, #6366f1);
+    border-radius: 20px;
+    transition: width 0.6s ease-in-out;
+}
+
+/* ---------- CONFIDENCE TEXT ---------- */
+
+.confidence {
+    font-size: 20px;
+    margin-top: 15px;
+    color: #cbd5e1;
+}
+
+/* ---------- TRUST SCORE ---------- */
+
+.trust-score {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #94a3b8;
+}
+
+/* ---------- FEEDBACK SECTION ---------- */
+
+.feedback {
+    margin-top: 40px;
+}
+
+.feedback p {
+    font-size: 18px;
+    color: #cbd5e1;
+}
+
+/* ---------- FEEDBACK BUTTONS ---------- */
+
+.real-btn {
+    background: #22c55e;
+    padding: 12px 30px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.fake-btn {
+    background: #ef4444;
+    padding: 12px 30px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.real-btn:hover,
+.fake-btn:hover {
+    opacity: 0.8;
+}
+
+/* ---------- DARK MODE TOGGLE ---------- */
+
+.toggle-container {
+    position: absolute;
+    right: 40px;
+    top: 25px;
+}
+
+.toggle-container label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.toggle-container input {
+    display: none;
+}
+
+.slider {
+    width: 50px;
+    height: 25px;
+    background: #64748b;
+    border-radius: 30px;
+    margin-right: 10px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+    width: 21px;
+    height: 21px;
+    background: white;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked + .slider {
+    background: #3b82f6;
+}
+
+input:checked + .slider::before {
+    transform: translateX(25px);
+}
+
+/* ---------- LIGHT MODE ---------- */
+
+.light-mode {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+.light-mode textarea {
+    background: #ffffff;
+    color: #111827;
+}
+
+.light-mode .progress {
+    background: #e5e7eb;
+}
+
+.light-mode .confidence,
+.light-mode .trust-score,
+.light-mode .feedback p {
+    color: #374151;
+}

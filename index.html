@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake News Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>Fake News Detection</h1>
+
+<div class="toggle-container">
+    <label>
+        <input type="checkbox" id="darkToggle">
+        <span class="slider"></span>
+        Dark Mode
+    </label>
+</div>
+
+<h2>Check if News is Real or Fake</h2>
+
+<form method="POST" action="/">
+    <textarea name="news" placeholder="Enter news text here..." required></textarea>
+    <br><br>
+    <button type="submit">Predict</button>
+</form>
+
+
+{% if prediction %}
+
+<div class="result" style="
+    width:50%;
+    margin:40px auto;
+    padding:25px;
+    border-radius:15px;
+    background:#020617;
+    border:1px solid #334155;
+">
+
+    <!-- REAL / FAKE with color -->
+    <h3 class="{% if prediction == 'REAL' %}real{% else %}fake{% endif %}">
+        Result: {{ prediction }}
+    </h3>
+
+    <!-- Progress bar -->
+    <div class="progress">
+        <div class="progress-bar" style="width: {{ probability | default(0) }}%;"></div>
+    </div>
+
+    <!-- Confidence -->
+    <div class="confidence">
+        Confidence: {{ probability }}%
+    </div>
+
+    <!-- Trust score -->
+    <div class="trust-score">
+        Trust Score: {{ trust_score }}%
+    </div>
+
+</div>
+
+{% endif %}
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
